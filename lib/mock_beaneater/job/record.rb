@@ -14,11 +14,15 @@ module MockBeaneater
     def release(options={})
       @reserved = false
       @tube.release(self)
+      {:status => "RELEASED",
+       :body => nil}
     end
 
     def delete
       @reserved = false
       @tube.delete(self)
+      {:status => "DELETED",
+       :body => nil}
     end
 
     def reserved?

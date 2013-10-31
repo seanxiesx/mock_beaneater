@@ -19,7 +19,7 @@ describe MockBeaneater::Job do
 
   describe "#release" do
     it "should set reserved to false" do
-      job = MockBeaneater::Job.new('body', double(:release => true))
+      job = MockBeaneater::Job.new('body', double(:release => nil))
       job.instance_variable_set(:@reserved, true)
       job.release
       job.should_not be_reserved
@@ -30,11 +30,15 @@ describe MockBeaneater::Job do
       tube.should_receive(:release).with(job)
       job.release
     end
+    it "should return hash with status and body (nil)" do
+      job = MockBeaneater::Job.new('body', double(:release => nil))
+      job.release.should == {:status => "RELEASED", :body => nil}
+    end
   end
 
   describe "#delete" do
     it "should set reserved to false" do
-      job = MockBeaneater::Job.new('body', double(:delete => true))
+      job = MockBeaneater::Job.new('body', double(:delete => nil))
       job.instance_variable_set(:@reserved, true)
       job.delete
       job.should_not be_reserved
@@ -44,6 +48,10 @@ describe MockBeaneater::Job do
       job = MockBeaneater::Job.new('body', tube)
       tube.should_receive(:delete).with(job)
       job.delete
+    end
+    it "should return hash with status and body (nil)" do
+      job = MockBeaneater::Job.new('body', double(:delete => nil))
+      job.delete.should == {:status => "DELETED", :body => nil}
     end
   end
 

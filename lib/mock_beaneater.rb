@@ -1,0 +1,5 @@
+require "algorithms"
+require "mock_beaneater/job"
+require "mock_beaneater/pool"
+require "mock_beaneater/tube"
+require "mock_beaneater/version"

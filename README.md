@@ -1,6 +1,8 @@
 MockBeaneater
 ==================
 
+[![Build Status](https://travis-ci.org/seanxiesx/mock_beaneater.png)](https://travis-ci.org/seanxiesx/mock_beaneater)
+
 Mock beaneater that goes AH-HEE-OH-HEE-AH-HEE\*. Intended for use in tests.
 
 \*sound a beaneater makes

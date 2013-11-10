@@ -2,6 +2,7 @@ MockBeaneater
 ==================
 
 [![Build Status](https://travis-ci.org/seanxiesx/mock_beaneater.png)](https://travis-ci.org/seanxiesx/mock_beaneater)
+[![Coverage Status](https://coveralls.io/repos/seanxiesx/mock_beaneater/badge.png)](https://coveralls.io/r/seanxiesx/mock_beaneater)
 
 Mock beaneater that goes AH-HEE-OH-HEE-AH-HEE\*. Intended for use in tests.
 

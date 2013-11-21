@@ -53,6 +53,11 @@ module MockBeaneater
       @ready.push(job, job.pri)
     end
 
+    def to_s
+      "#<MockBeaneater::Tube name=#{@name.inspect}>"
+    end
+    alias :inspect :to_s
+
     private
 
     def refresh_tube

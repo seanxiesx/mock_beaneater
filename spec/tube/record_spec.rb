@@ -116,6 +116,22 @@ describe MockBeaneater::Tube do
     end
   end
 
+  describe "#to_s" do
+    it "should output only tube name" do
+      name = 'my-tube'
+      tube = MockBeaneater::Tube.new(double, name)
+      tube.to_s.should == "#<MockBeaneater::Tube name=#{name.inspect}>"
+    end
+  end
+
+  describe "#inspect" do
+    it "should output only tube name" do
+      name = 'my-tube'
+      tube = MockBeaneater::Tube.new(double, name)
+      tube.inspect.should == "#<MockBeaneater::Tube name=#{name.inspect}>"
+    end
+  end
+
   describe "#refresh_tube" do
     it "should move jobs which should be visible from delayed to ready" do
       tube = MockBeaneater::Tube.new(double, double)

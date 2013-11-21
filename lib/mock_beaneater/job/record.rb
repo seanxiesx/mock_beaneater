@@ -36,5 +36,6 @@ module MockBeaneater
     def to_s
       "#<MockBeaneater::Job id=#{@id} body=#{@body.inspect}>"
     end
+    alias :inspect :to_s
   end
 end

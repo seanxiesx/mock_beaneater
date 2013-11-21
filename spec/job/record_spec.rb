@@ -85,4 +85,11 @@ describe MockBeaneater::Job do
       job.to_s.should == "#<MockBeaneater::Job id=#{job.id} body=#{job.body.inspect}>"
     end
   end
+
+  describe "#inspect" do
+    it "should output only job id and body" do
+      job = MockBeaneater::Job.new('body', double)
+      job.inspect.should == "#<MockBeaneater::Job id=#{job.id} body=#{job.body.inspect}>"
+    end
+  end
 end

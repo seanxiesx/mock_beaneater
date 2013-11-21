@@ -1,4 +1,5 @@
 require "algorithms"
+require "mock_beaneater/errors"
 require "mock_beaneater/job"
 require "mock_beaneater/pool"
 require "mock_beaneater/tube"

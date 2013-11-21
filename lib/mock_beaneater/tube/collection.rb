@@ -43,6 +43,7 @@ module MockBeaneater
     end
 
     def first_or_create(tube_name)
+      raise InvalidTubeName unless tube_name.match(Tube::VALID_NAME)
       @all.find { |t| t.name == tube_name } || (@all << Tube.new(@pool, tube_name)).last
     end
   end

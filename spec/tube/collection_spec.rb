@@ -79,5 +79,13 @@ describe MockBeaneater::Tubes do
       tubes.first_or_create(tube_name).should == tubes.all.last
       tubes.all.map(&:name).include?(tube_name).should be_true
     end
+    # see https://github.com/kr/beanstalkd/blob/master/doc/protocol.txt
+    it "should raise InvalidTubeName if tube_name is invalid" do
+      tubes = MockBeaneater::Tubes.new(double)
+      invalid_tube_names = ['-bad', '%bad']
+      invalid_tube_names.each do |tube_name|
+        expect { tubes.first_or_create(tube_name) }.to raise_error(MockBeaneater::InvalidTubeName)
+      end
+    end
   end
 end

@@ -1,5 +1,6 @@
 module MockBeaneater
   class Tube
+    VALID_NAME = /^[A-Za-z0-9;$_\+\.\/\(\)][A-Za-z0-9;$_\-\+\.\/\(\)]+$/
     attr_reader :pool, :name
 
     def initialize(pool, name)
